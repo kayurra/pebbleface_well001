@@ -11,6 +11,16 @@
     "resources": {
         "media": [
             {
+                "file": "images/WELLAndLoss3.png",
+                "name": "IMAGE_BACKGROUND3",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "png"
+            },
+            {
                 "file": "images/WELLAndLoss2.png",
                 "name": "IMAGE_BACKGROUND2",
                 "targetPlatforms": [
