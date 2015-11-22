@@ -17,6 +17,9 @@ typedef struct {
 static Window *s_main_window;
 static Layer *s_canvas_layer;
 
+static BitmapLayer *s_background_layer;
+static GBitmap *s_background_bitmap;
+
 static GPoint s_center;
 static Time s_last_time, s_anim_time;
 static int s_radius = 0, s_anim_hours_60 = 0, s_color_channels[3];
@@ -123,8 +126,19 @@ static void update_proc(Layer *layer, GContext *ctx) {
 }
 
 static void window_load(Window *window) {
+  // Get information about the Window
   Layer *window_layer = window_get_root_layer(window);
   GRect window_bounds = layer_get_bounds(window_layer);
+
+  // Create GBitmap
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BACKGROUND2);
+
+  // Create BitmapLayer to display the GBitmap
+  s_background_layer = bitmap_layer_create(window_bounds);
+
+  // Set the bitmap onto the layer and add to the window
+  bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
+  layer_add_child(window_layer, bitmap_layer_get_layer(s_background_layer));
 
   s_center = grect_center_point(&window_bounds);
 
