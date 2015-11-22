@@ -76,21 +76,21 @@ static void update_proc(Layer *layer, GContext *ctx) {
   // Color background?
   GRect bounds = layer_get_bounds(layer);
   if(COLORS) {
-    graphics_context_set_fill_color(ctx, GColorFromRGB(s_color_channels[0], s_color_channels[1], s_color_channels[2]));
-    graphics_fill_rect(ctx, bounds, 0, GCornerNone);
+    //graphics_context_set_fill_color(ctx, GColorFromRGB(s_color_channels[0], s_color_channels[1], s_color_channels[2]));
+    //graphics_fill_rect(ctx, bounds, 0, GCornerNone);
   }
 
-  graphics_context_set_stroke_color(ctx, GColorBlack);
-  graphics_context_set_stroke_width(ctx, 4);
+  graphics_context_set_stroke_color(ctx, GColorWhite);
+  graphics_context_set_stroke_width(ctx, 9);
 
   graphics_context_set_antialiased(ctx, ANTIALIASING);
 
   // White clockface
-  graphics_context_set_fill_color(ctx, GColorWhite);
-  graphics_fill_circle(ctx, s_center, s_radius);
+  //graphics_context_set_fill_color(ctx, GColorWhite);
+  //graphics_fill_circle(ctx, s_center, s_radius);
 
   // Draw outline
-  graphics_draw_circle(ctx, s_center, s_radius);
+  //graphics_draw_circle(ctx, s_center, s_radius);
 
   // Don't use current time while animating
   Time mode_time = (s_animating) ? s_anim_time : s_last_time;
@@ -177,7 +177,13 @@ static void init() {
   struct tm *time_now = localtime(&t);
   tick_handler(time_now, MINUTE_UNIT);
 
+  // Create main Window element and assign to pointer
   s_main_window = window_create();
+
+  // Set the background color
+  window_set_background_color(s_main_window, GColorBlack);
+
+  // Set handlers to manage the elements inside the Window
   window_set_window_handlers(s_main_window, (WindowHandlers) {
     .load = window_load,
     .unload = window_unload,
