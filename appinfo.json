@@ -5,14 +5,19 @@
     "capabilities": [
         ""
     ],
-    "companyName": "Chris Lewis",
-    "longName": "KS Original",
+    "companyName": "Tsukune",
+    "longName": "WellAndLoss123",
     "projectType": "native",
     "resources": {
         "media": [
             {
-                "file": "images/WELLAndLoss6(180180).png",
+                "file": "images/WELLAndLoss6.png",
                 "name": "IMAGE_BACKGROUND6",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
                 "type": "png"
             },
             {
@@ -38,12 +43,12 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "KS Original",
+    "shortName": "WAL123",
     "targetPlatforms": [
         "chalk"
     ],
     "uuid": "25becbb7-c0bc-4180-82b6-b36f1bf894c7",
-    "versionLabel": "1.1",
+    "versionLabel": "1.0",
     "watchapp": {
         "watchface": true
     }
