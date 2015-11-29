@@ -59,7 +59,7 @@ static void tick_handler(struct tm *tick_time, TimeUnits changed) {
   s_last_time.minutes = tick_time->tm_min;
 
   for(int i = 0; i < 3; i++) {
-    s_color_channels[i] = rand() % 256;
+    s_color_channels[i] = rand() % 80;
   }
 
   // Redraw
