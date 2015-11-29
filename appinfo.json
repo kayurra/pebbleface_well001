@@ -11,7 +11,17 @@
     "resources": {
         "media": [
             {
+                "characterRegex": "[0-9;. ]",
+                "file": "fonts/singaporeslingbold.ttf",
+                "name": "FONT_SINGAPORE_BOLD_20",
+                "targetPlatforms": [
+                    "chalk"
+                ],
+                "type": "font"
+            },
+            {
                 "file": "images/suzu001.png",
+                "menuIcon": true,
                 "name": "IMAGE_BG_SUZU001",
                 "targetPlatforms": [
                     "aplite",
