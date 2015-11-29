@@ -80,7 +80,7 @@ static void update_proc(Layer *layer, GContext *ctx) {
     //graphics_fill_rect(ctx, bounds, 0, GCornerNone);
   }
 
-  graphics_context_set_stroke_color(ctx, GColorWhite);
+  graphics_context_set_stroke_color(ctx, GColorFromRGB(s_color_channels[0], s_color_channels[1], s_color_channels[2]));
   graphics_context_set_stroke_width(ctx, 6);
 
   graphics_context_set_antialiased(ctx, ANTIALIASING);
@@ -131,7 +131,7 @@ static void window_load(Window *window) {
   GRect window_bounds = layer_get_bounds(window_layer);
 
   // Create GBitmap
-  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BACKGROUND6);
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BG_SUZU001);
 
   // Create BitmapLayer to display the GBitmap
   s_background_layer = bitmap_layer_create(window_bounds);

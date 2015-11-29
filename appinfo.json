@@ -6,10 +6,30 @@
         ""
     ],
     "companyName": "Tsukune",
-    "longName": "WellAndLoss123",
+    "longName": "suzu001",
     "projectType": "native",
     "resources": {
         "media": [
+            {
+                "file": "images/suzu001.png",
+                "name": "IMAGE_BG_SUZU001",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "png"
+            },
+            {
+                "file": "images/suzu003.png",
+                "name": "IMAGE_BG_SUZU003",
+                "targetPlatforms": [
+                    "aplite",
+                    "basalt",
+                    "chalk"
+                ],
+                "type": "png"
+            },
             {
                 "file": "images/WELLAndLoss6.png",
                 "name": "IMAGE_BACKGROUND6",
@@ -43,7 +63,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "WAL123",
+    "shortName": "suzu001",
     "targetPlatforms": [
         "chalk"
     ],
