@@ -90,7 +90,7 @@ static void update_proc(Layer *layer, GContext *ctx) {
   //graphics_fill_circle(ctx, s_center, s_radius);
 
   // Draw outline
-  //graphics_draw_circle(ctx, s_center, s_radius);
+  // graphics_draw_circle(ctx, s_center, s_radius);
 
   // Don't use current time while animating
   Time mode_time = (s_animating) ? s_anim_time : s_last_time;
