@@ -6,7 +6,7 @@
         ""
     ],
     "companyName": "Tsukune",
-    "longName": "suzu001",
+    "longName": "WellAndLoss",
     "projectType": "native",
     "resources": {
         "media": [
@@ -21,7 +21,6 @@
             },
             {
                 "file": "images/suzu001.png",
-                "menuIcon": true,
                 "name": "IMAGE_BG_SUZU001",
                 "targetPlatforms": [
                     "aplite",
@@ -42,30 +41,9 @@
             },
             {
                 "file": "images/WELLAndLoss6.png",
-                "name": "IMAGE_BACKGROUND6",
+                "menuIcon": true,
+                "name": "IMAGE_BG_WELLANDLOSS6",
                 "targetPlatforms": [
-                    "aplite",
-                    "basalt",
-                    "chalk"
-                ],
-                "type": "png"
-            },
-            {
-                "file": "images/WELLAndLoss3.png",
-                "name": "IMAGE_BACKGROUND3",
-                "targetPlatforms": [
-                    "aplite",
-                    "basalt",
-                    "chalk"
-                ],
-                "type": "png"
-            },
-            {
-                "file": "images/WELLAndLoss2.png",
-                "name": "IMAGE_BACKGROUND2",
-                "targetPlatforms": [
-                    "aplite",
-                    "basalt",
                     "chalk"
                 ],
                 "type": "png"
@@ -73,7 +51,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "suzu001",
+    "shortName": "WAL",
     "targetPlatforms": [
         "chalk"
     ],

@@ -63,13 +63,9 @@ static void tick_handler(struct tm *tick_time, TimeUnits changed) {
   s_last_time.minutes = tick_time->tm_min;
 
   for(int i = 0; i < 3; i++) {
-    s_color_channels[i] = rand() % 80;
+    // default256->100 + 150 changed
+    s_color_channels[i] = rand() % 100 + 156;
   }
-
-  // [date]Copy date into buffer from tm structure
-  static char date_buffer[16];
-  strftime(date_buffer, sizeof(date_buffer), "%a %d %b", tick_time);
-
 
   // Redraw
   if(s_canvas_layer) {
@@ -133,8 +129,6 @@ static void update_proc(Layer *layer, GContext *ctx) {
     graphics_draw_line(ctx, s_center, minute_hand);
   }
   
-  // [date]Show the date
-  text_layer_set_text(s_date_layer, date_buffer);
 }
 
 static void window_load(Window *window) {
@@ -143,7 +137,7 @@ static void window_load(Window *window) {
   GRect window_bounds = layer_get_bounds(window_layer);
 
   // Create GBitmap
-  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BG_SUZU001);
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_BG_WELLANDLOSS6);
 
   // Create BitmapLayer to display the GBitmap
   s_background_layer = bitmap_layer_create(window_bounds);
@@ -157,18 +151,6 @@ static void window_load(Window *window) {
   s_canvas_layer = layer_create(window_bounds);
   layer_set_update_proc(s_canvas_layer, update_proc);
   layer_add_child(window_layer, s_canvas_layer);
-
-  // [date]Create date TextLayer
-  s_date_layer = text_layer_create(GRect(0, 120, 144, 30));
-  text_layer_set_text_color(s_date_layer, GColorWhite);
-  text_layer_set_background_color(s_date_layer, GColorClear);
-  text_layer_set_text_alignment(s_date_layer, GTextAlignmentCenter);
-
-  s_date_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_SINGAPORE_BOLD_20));
-  text_layer_set_font(s_date_layer, s_date_font);
-
-  // [date]Add to Window
-  layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_date_layer));
 }
 
 static void window_unload(Window *window) {
@@ -230,9 +212,6 @@ static void init() {
 
 static void deinit() {
   window_destroy(s_main_window);
-  // [date]font
-  fonts_unload_custom_font(s_date_font);
-  text_layer_destroy(s_date_layer);
 }
 
 int main() {
